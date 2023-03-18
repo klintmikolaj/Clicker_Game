@@ -14,10 +14,14 @@ public:
 
     int get_points();
     void add_points(int p);
+    int get_level();
+    void add_level(int p);
+    int word(int p);
 
 private:
 
     int points;
+    int level;
 
 };
 

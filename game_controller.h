@@ -21,7 +21,6 @@ public:
 private:
     game_view& view;
     game_model& model;
-
 };
 
 
