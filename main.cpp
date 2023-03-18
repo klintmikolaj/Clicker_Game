@@ -1,6 +1,11 @@
 #include <iostream>
+#include "game_controller.h"
+
+using namespace std;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    game_model model;
+    game_controller controller(model);
+    controller.launch();
     return 0;
 }
