@@ -5,19 +5,21 @@
 #include <iostream>
 #include <conio.h>
 #include "game_model.h"
+#include "game_view.h"
 
 using namespace std;
+
+// Zadaniem tej klasy jest reagowanie na interakcje z klasy "view" i zmieniała ich wartość w klasie "model"
 
 class game_controller {
 
 public:
 
-    explicit game_controller(game_model& model);
+    explicit game_controller(game_model&, game_view&);
     void launch();
-    void update();
 
 private:
-
+    game_view& view;
     game_model& model;
 
 };
