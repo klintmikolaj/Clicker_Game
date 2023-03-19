@@ -2,6 +2,7 @@
 #include <windows.h>
 #include "game_view.h"
 
+//Uchwyt pod zmiane koloru tekstu
 HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
 game_view::game_view(game_model& model):model(model)

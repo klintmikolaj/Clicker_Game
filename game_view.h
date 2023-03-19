@@ -2,8 +2,9 @@
 #define EXAMPLEMVC_GAMEVIEW_H
 
 #include <iostream>
-#include <stdlib.h>
 #include "game_model.h"
+
+//Zadaniem tej klasy jest wyswietlanie uzytkownikowi wszelkich informacji
 
 class game_view
 {
