@@ -15,7 +15,8 @@ public:
     int get_points();
     void add_points(int p);
     int get_level();
-    void add_level(int p);
+    int add_level();
+    int to_next_level();
     int word(int p);
 
 private:

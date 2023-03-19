@@ -15,9 +15,13 @@ void game_view::update()
     SetConsoleTextAttribute(h, 12);
     cout << "Welcome to CC!" << endl << endl;
     SetConsoleTextAttribute(h, 15);
-    cout << "Points: "<< model.get_points() << endl << endl;
-    cout << "Level: "<< model.get_level() << endl << endl;
-    cout << "Completed letters: ";
-    model.word(model.get_level());
+    model.add_level();
+    cout << "Points: "; SetConsoleTextAttribute(h, 10); cout << model.get_points() << endl << endl; SetConsoleTextAttribute(h, 15);
+    cout << "Level: "; SetConsoleTextAttribute(h, 10); cout << model.get_level() << endl << endl; SetConsoleTextAttribute(h, 15);
+    cout << "To next level you need ";
+    if (model.to_next_level() == 1) {SetConsoleTextAttribute(h, 10); cout << model.to_next_level(); SetConsoleTextAttribute(h, 15); cout << " click";}
+    else {SetConsoleTextAttribute(h, 10); cout << model.to_next_level(); SetConsoleTextAttribute(h, 15); cout << " clicks"; }
+//    cout << "Completed letters: ";
+//    model.word(model.get_level());
     cout << endl;
 }

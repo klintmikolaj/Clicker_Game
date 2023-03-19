@@ -15,8 +15,14 @@ int game_model::get_level() {
     return this->level;
 }
 
-void game_model::add_level(int p) {
-    this->level += p;
+int game_model::add_level() {
+    if (this->points >= this->level * (this->level * 30))
+    return this->level++;
+}
+
+int game_model::to_next_level() {
+    return ((this->level * (this->level * 30)) - this->points);
+
 }
 
 int game_model::word(int p) {
@@ -31,4 +37,5 @@ int game_model::word(int p) {
             cout << "";
     }
 }
+
 
