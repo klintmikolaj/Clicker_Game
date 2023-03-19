@@ -10,6 +10,7 @@
 using namespace std;
 
 // Zadaniem tej klasy jest reagowanie na interakcje z klasy "view" i zmieniała ich wartość w klasie "model"
+// Działanie programu
 
 class game_controller {
 

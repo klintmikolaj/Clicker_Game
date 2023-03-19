@@ -4,8 +4,8 @@
 #include <iostream>
 #include "game_model.h"
 
-//Zadaniem tej klasy jest wyswietlanie uzytkownikowi wszelkich informacji
-
+// Zadaniem tej klasy jest wyswietlanie uzytkownikowi wszelkich informacji
+// Zbieranie danych
 class game_view
 {
 public:
