@@ -11,10 +11,10 @@ game_view::game_view(game_model& model):model(model)
 
 void game_view::update()
 {
-    SetConsoleTitleA("CC");
+    SetConsoleTitleA("Mafia Clicker");
     system("cls");
     SetConsoleTextAttribute(h, 12);
-    cout << "Welcome to CC!" << endl << endl;
+    cout << "Welcome to Mafia Clicker!" << endl << endl;
     SetConsoleTextAttribute(h, 15);
     model.add_level();
     cout << "Points: "; SetConsoleTextAttribute(h, 10); cout << model.get_points() << endl << endl; SetConsoleTextAttribute(h, 15);
