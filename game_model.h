@@ -17,7 +17,7 @@ public:
     int get_level();
     int add_level();
     int to_next_level();
-    int word(int p);
+    string ranks(int p);
 
 private:
 

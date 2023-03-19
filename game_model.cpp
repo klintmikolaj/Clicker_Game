@@ -25,17 +25,23 @@ int game_model::to_next_level() {
 
 }
 
-int game_model::word(int p) {
-    switch (p) {
-        case 0:
-            cout << char(244);
-            break;
+string game_model::ranks(int p) {
+    switch(p)
+    {
         case 1:
-            cout << "✰ ✵";
-            break;
+            return "Crook";
+        case 2:
+            return "Soldier";
+        case 3:
+            return "Caporegime";
+        case 4:
+            return "Consigliere";
+        case 5:
+            return "Underboss";
+        case 6:
+            return "Boss";
         default:
-            cout << "";
+            return "Godfather";
     }
 }
-
 

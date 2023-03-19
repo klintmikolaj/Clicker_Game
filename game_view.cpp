@@ -21,7 +21,8 @@ void game_view::update()
     cout << "To next level you need ";
     if (model.to_next_level() == 1) {SetConsoleTextAttribute(h, 10); cout << model.to_next_level(); SetConsoleTextAttribute(h, 15); cout << " click";}
     else {SetConsoleTextAttribute(h, 10); cout << model.to_next_level(); SetConsoleTextAttribute(h, 15); cout << " clicks"; }
-//    cout << "Completed letters: ";
-//    model.word(model.get_level());
+    cout << endl << endl;
+    cout << "Your current rank is: "; SetConsoleTextAttribute(h, 14); cout << char(206) << " "; cout << (model.ranks(model.get_level())); cout << " " << char(206); SetConsoleTextAttribute(h, 15);
     cout << endl;
+
 }
