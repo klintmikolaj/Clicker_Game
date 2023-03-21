@@ -4,6 +4,7 @@
 #include <conio.h>
 
 //Sprawdzenie
+//Sprawdzanie zakonczone
 
 //Uchwyt pod zmiane koloru tekstu
 //HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
