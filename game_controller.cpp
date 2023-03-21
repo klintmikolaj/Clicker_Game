@@ -21,7 +21,7 @@ void game_controller::launch() {
 
 void game_controller::menu() {
     int width = 1;
-    int height = 3;
+    int height = 4;
 
 
     int x = 0, y = 0;
@@ -62,12 +62,24 @@ void game_controller::menu() {
             cout << "HELP ME" << endl;
         }
 
-        if (y == 1 && a == 13) this->core();
-        if (y == 2 && a == 13) this->view.help();
+        if (y == 3) {
+            SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_INTENSITY);
+            cout << char(16) << " EXIT THE GAME (YOUR PROGRESS WON'T BE SAVED!)  ";
+            cout << char(17) << endl;
+        }
+        if (y != 3) {
+            SetConsoleTextAttribute(hOut, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY);
+            cout << "EXIT THE GAME" << endl;
+        }
+
+        if (y == 1 and a == 13) this->core();
+        if (y == 2 and a == 13) this->view.help();
+        if (y == 3 and a == 13) terminate();
 
         {
             SetConsoleTextAttribute(hOut, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY);
             cout << "\nIn menu maneuver with the arrows" << endl;
+            cout << "Press ENTER to select" << endl;
         }
 
     }
