@@ -18,6 +18,8 @@ public:
 
     explicit game_controller(game_model&, game_view&);
     void launch();
+    void menu();
+    void core();
 
 private:
     game_view& view;
