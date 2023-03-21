@@ -1,8 +1,6 @@
 #include <iostream>
 #include <windows.h>
 #include "game_view.h"
-#include <conio.h>
-#include <cstdlib>
 
 
 //Uchwyt pod zmiane koloru tekstu
