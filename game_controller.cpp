@@ -89,11 +89,34 @@ void game_controller::core() {
         int key;
         this->view.update();
         do {
+            if (key == 8)
+            {
+                clearing_progress();
+            }
+
             key = _getch();
             if (key == 32) {
                 this->model.add_points(1);
                 this->view.update();
+//                cout << "MAX POINTS" << endl;
+//                cout << model.highest_points(model.get_points()) << endl;
+//                cout << "MAX LEVEL" << endl;
+//                cout << model.highest_level(model.get_level()) << endl;
             }
+
+
         } while (key != 27);
 }
+
+void game_controller::clearing_progress() {
+    HANDLE hOut;
+    hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+    model.clear_points();
+    view.update();
+    SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_INTENSITY);
+    cout << "\n\nProgress has been cleared!" << endl;
+    SetConsoleTextAttribute(hOut, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY);
+}
+
+
 
