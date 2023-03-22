@@ -55,12 +55,12 @@ void game_model::clear_level() {
 
 
 int game_model::highest_points(int p) {
-    if (p >= points) points_record = p;
+    if (p >= points_record) points_record = p;
     return points_record;
 }
 
 int game_model::highest_level(int p) {
-    if (p >= level) level_record = p;
+    if (p >= level_record) level_record = p;
     return level_record;
 }
 

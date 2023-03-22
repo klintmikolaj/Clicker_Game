@@ -15,6 +15,7 @@ public:
     static void help();
     static void title();
     static void entry();
+    static void best_scores(int, int);
     static void hidecursor();
 private:
     game_model& model;

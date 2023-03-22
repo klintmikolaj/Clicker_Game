@@ -22,6 +22,7 @@ public:
     void core();
     void clearing_points();
     void clearing_level();
+//    void save(int, int);
 
 private:
     game_view& view;

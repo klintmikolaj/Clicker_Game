@@ -2,9 +2,7 @@
 #include <windows.h>
 #include "game_controller.h"
 #include <conio.h>
-
-//Sprawdzenie
-//Sprawdzanie zakonczone
+#include <fstream>
 
 //Uchwyt pod zmiane koloru tekstu
 //HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -21,7 +19,7 @@ void game_controller::launch() {
 
 void game_controller::menu() {
     int width = 1;
-    int height = 4;
+    int height = 5;
 
 
     int x = 0, y = 0;
@@ -63,18 +61,31 @@ void game_controller::menu() {
         }
 
         if (y == 3) {
-            SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_INTENSITY);
-            cout << char(16) << " EXIT THE GAME (YOUR PROGRESS WON'T BE SAVED!)  ";
+            SetConsoleTextAttribute(hOut, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+            cout << char(16) << " BEST SCORE  ";
             cout << char(17) << endl;
         }
         if (y != 3) {
             SetConsoleTextAttribute(hOut, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY);
+            cout << "BEST SCORE" << endl;
+        }
+
+        if (y == 4) {
+            SetConsoleTextAttribute(hOut, FOREGROUND_RED | FOREGROUND_INTENSITY);
+            cout << char(16) << " EXIT THE GAME (YOUR PROGRESS WON'T BE SAVED!)  ";
+            cout << char(17) << endl;
+        }
+        if (y != 4) {
+            SetConsoleTextAttribute(hOut, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY);
             cout << "EXIT THE GAME" << endl;
         }
 
+
+
         if (y == 1 and a == 13) this->core();
         if (y == 2 and a == 13) this->view.help();
-        if (y == 3 and a == 13) terminate();
+        if (y == 3 and a == 13) this-> view.best_scores(model.highest_points(model.get_points()), model.highest_level(model.get_level()));
+        if (y == 4 and a == 13) terminate();
 
         {
             SetConsoleTextAttribute(hOut, FOREGROUND_GREEN | FOREGROUND_BLUE | FOREGROUND_RED | FOREGROUND_INTENSITY);
@@ -99,11 +110,10 @@ void game_controller::core() {
             if (key == 32) {
                 this->model.add_points(1);
                 this->view.update();
-//                cout << "MAX POINTS" << endl;
-//                cout << model.highest_points(model.get_points()) << endl;
-//                cout << "MAX LEVEL" << endl;
-//                cout << model.highest_level(model.get_level()) << endl;
+                model.highest_points(model.get_points());
+                model.highest_level(model.get_level());
             }
+
 
 
         } while (key != 27);
@@ -125,4 +135,18 @@ void game_controller::clearing_points() {
 }
 
 
-
+//
+//void game_controller::save(int p, int l) {
+//    fstream file("Record", ios::in | ios::out | ios::app);
+//    if (file.is_open())
+//    {
+//        file << "[POINTS RECORD] " << p << endl;
+//        file << "[LEVEL RECORD] " << l << endl << endl;
+//    }
+//}
+//
+//
+//cout << "MAX POINTS" << endl;
+//cout << model.highest_points(model.get_points()) << endl;
+//cout << "MAX LEVEL" << endl;
+//cout << model.highest_level(model.get_level()) << endl;

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <windows.h>
 #include "game_view.h"
+#include "game_model.h"
 
 
 //Uchwyt pod zmiane koloru tekstu
@@ -34,6 +35,17 @@ void game_view::update()
 
 }
 
+void game_view::best_scores(int p, int l) {
+    system("cls");
+    hidecursor();
+    title();
+    SetConsoleTextAttribute(h, 10);
+    cout << "BEST SCORES:" << endl << endl;
+    cout << "POINTS: " << p << endl << endl;
+    cout << "LEVELS: " << l << endl;
+}
+
+
 void game_view::help() {
     system("cls");
     hidecursor();
@@ -46,6 +58,8 @@ void game_view::help() {
     cout << "With every level you'll be promoted to the next rank in mafia structures" << endl;
     cout << "\nPress ESC to go back to menu" << endl;
 }
+
+
 
 void game_view::title() {
     SetConsoleTextAttribute(h, 10);
@@ -74,6 +88,7 @@ void game_view::hidecursor() {
     info.bVisible = false;
     SetConsoleCursorInfo(consoleHandle, &info);
 }
+
 
 
 
