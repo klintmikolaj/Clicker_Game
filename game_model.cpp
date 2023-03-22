@@ -49,6 +49,10 @@ void game_model::clear_points() {
     this->points = 0;
 }
 
+void game_model::clear_level() {
+    this->level = 0;
+}
+
 
 int game_model::highest_points(int p) {
     if (p >= points) points_record = p;

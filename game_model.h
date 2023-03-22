@@ -18,6 +18,7 @@ public:
     int add_level();
     int to_next_level();
     void clear_points();
+    void clear_level();
     string ranks(int p);
     int highest_points(int p);
     int highest_level(int p);

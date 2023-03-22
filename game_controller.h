@@ -20,7 +20,8 @@ public:
     void launch();
     void menu();
     void core();
-    void clearing_progress();
+    void clearing_points();
+    void clearing_level();
 
 private:
     game_view& view;

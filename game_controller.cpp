@@ -91,7 +91,8 @@ void game_controller::core() {
         do {
             if (key == 8)
             {
-                clearing_progress();
+                clearing_level();
+                clearing_points();
             }
 
             key = _getch();
@@ -108,7 +109,12 @@ void game_controller::core() {
         } while (key != 27);
 }
 
-void game_controller::clearing_progress() {
+
+void game_controller::clearing_level() {
+    model.clear_level();
+}
+
+void game_controller::clearing_points() {
     HANDLE hOut;
     hOut = GetStdHandle(STD_OUTPUT_HANDLE);
     model.clear_points();
