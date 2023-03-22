@@ -45,3 +45,18 @@ string game_model::ranks(int p) {
     }
 }
 
+void game_model::clear_points() {
+    this->points = 0;
+}
+
+
+int game_model::highest_points(int p) {
+    if (p >= points) points_record = p;
+    return points_record;
+}
+
+int game_model::highest_level(int p) {
+    if (p >= level) level_record = p;
+    return level_record;
+}
+

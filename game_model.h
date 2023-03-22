@@ -17,12 +17,17 @@ public:
     int get_level();
     int add_level();
     int to_next_level();
+    void clear_points();
     string ranks(int p);
+    int highest_points(int p);
+    int highest_level(int p);
 
 private:
 
-    int points;
-    int level;
+    int points = 0;
+    int level = 1;
+    int points_record = 0;
+    int level_record = 1;
 
 };
 

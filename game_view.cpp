@@ -29,6 +29,7 @@ void game_view::update()
     cout << "Your current rank is: "; SetConsoleTextAttribute(h, 14); cout << char(206) << " "; cout << (model.ranks(model.get_level())); cout << " " << char(206); SetConsoleTextAttribute(h, 15);
     cout << endl;
     cout << "\n\nPress SPACE to get a point" << endl;
+    cout << "Press BACKSPACE to clear your progress" << endl;
     cout << "Press ESC two times to go back to menu";
 
 }

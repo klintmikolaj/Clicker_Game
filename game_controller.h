@@ -20,6 +20,7 @@ public:
     void launch();
     void menu();
     void core();
+    void clearing_progress();
 
 private:
     game_view& view;
