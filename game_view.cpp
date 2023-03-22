@@ -43,6 +43,8 @@ void game_view::best_scores(int p, int l) {
     cout << "BEST SCORES:" << endl << endl;
     cout << "POINTS: " << p << endl << endl;
     cout << "LEVELS: " << l << endl;
+    SetConsoleTextAttribute(h, 15);
+    cout << "\nPress ESC to go back to menu" << endl;
 }
 
 
