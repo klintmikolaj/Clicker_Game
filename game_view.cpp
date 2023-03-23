@@ -17,8 +17,6 @@ void game_view::update()
     system("cls");
     title();
     hidecursor();
-//    SetConsoleTextAttribute(h, 12);
-//    cout << "Welcome to Mafia Clicker!" << endl << endl;
     SetConsoleTextAttribute(h, 15);
     model.add_level();
     cout << "Points: "; SetConsoleTextAttribute(h, 10); cout << model.get_points() << endl << endl; SetConsoleTextAttribute(h, 15);
@@ -78,9 +76,6 @@ void game_view::entry() {
     hidecursor();
     cout << "Press ENTER to start the game!";
     cout << endl;
-//    int key = getch();
-//    if (key == 27) terminate();
-
 }
 
 void game_view::hidecursor() {

@@ -8,6 +8,7 @@ using namespace std;
 
 // Zadaniem tej klasy jest  przechowywanie informacji o stanie gry (np. liczbie punktów) oraz działanie na tych informacjach (np. zwiększanie liczby punktów)
 // Wyświetlanie
+
 class game_model {
 
 public:
