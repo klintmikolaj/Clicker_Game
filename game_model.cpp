@@ -17,7 +17,7 @@ int game_model::get_level() {
 
 int game_model::add_level() {
     if (this->points >= this->level * (this->level * 30))
-    return this->level++;
+        return this->level++;
 }
 
 int game_model::to_next_level() {
@@ -26,8 +26,7 @@ int game_model::to_next_level() {
 }
 
 string game_model::ranks(int p) {
-    switch(p)
-    {
+    switch (p) {
         case 1:
             return "Crook";
         case 2:

@@ -14,14 +14,23 @@ class game_model {
 public:
 
     int get_points();
+
     void add_points(int p);
+
     int get_level();
+
     int add_level();
+
     int to_next_level();
+
     void clear_points();
+
     void clear_level();
+
     string ranks(int p);
+
     int highest_points(int p);
+
     int highest_level(int p);
 
 private:

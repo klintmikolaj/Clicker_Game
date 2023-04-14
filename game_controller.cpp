@@ -9,7 +9,7 @@
 
 using namespace std;
 
-game_controller::game_controller(game_model& model, game_view &view) : model(model), view(view) {
+game_controller::game_controller(game_model &model, game_view &view) : model(model), view(view) {
 }
 
 void game_controller::launch() {
@@ -81,10 +81,10 @@ void game_controller::menu() {
         }
 
 
-
         if (y == 1 and a == 13) this->core();
         if (y == 2 and a == 13) this->view.help();
-        if (y == 3 and a == 13) this-> view.best_scores(model.highest_points(model.get_points()), model.highest_level(model.get_level()));
+        if (y == 3 and a == 13)
+            this->view.best_scores(model.highest_points(model.get_points()), model.highest_level(model.get_level()));
         if (y == 4 and a == 13) terminate();
 
         {
@@ -97,26 +97,24 @@ void game_controller::menu() {
 }
 
 void game_controller::core() {
-        int key;
-        this->view.update();
-        do {
-            if (key == 8)
-            {
-                clearing_level();
-                clearing_points();
-            }
+    int key;
+    this->view.update();
+    do {
+        if (key == 8) {
+            clearing_level();
+            clearing_points();
+        }
 
-            key = _getch();
-            if (key == 32) {
-                this->model.add_points(1);
-                this->view.update();
-                model.highest_points(model.get_points());
-                model.highest_level(model.get_level());
-            }
-
+        key = _getch();
+        if (key == 32) {
+            this->model.add_points(1);
+            this->view.update();
+            model.highest_points(model.get_points());
+            model.highest_level(model.get_level());
+        }
 
 
-        } while (key != 27);
+    } while (key != 27);
 }
 
 

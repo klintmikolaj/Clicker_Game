@@ -16,17 +16,22 @@ class game_controller {
 
 public:
 
-    explicit game_controller(game_model&, game_view&);
+    explicit game_controller(game_model &, game_view &);
+
     void launch();
+
     void menu();
+
     void core();
+
     void clearing_points();
+
     void clearing_level();
 //    void save(int, int);
 
 private:
-    game_view& view;
-    game_model& model;
+    game_view &view;
+    game_model &model;
 };
 
 
